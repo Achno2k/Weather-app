@@ -20,13 +20,13 @@ async function findWeather() {
 
     try {
         const response = await axios.get(url);
-        // console.log(response);
+        console.log(response);
         if (response.data && response.data.main && response.data.wind) {
             const temperature = response.data.main.temp;
             const windSpeed = response.data.wind.speed;
             const humidity = response.data.main.humidity;
             const weather = response.data.weather[0].main;
-
+            
             addTemperature(temperature, cityName);
             addImage(weather);
             addHumidity(humidity);
